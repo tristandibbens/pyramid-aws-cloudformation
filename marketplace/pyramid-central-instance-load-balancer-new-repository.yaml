@@ -301,7 +301,7 @@ Mappings:
     eu-west-1:
       '64': ami-07c7200d1881c8824
     eu-west-2:
-      '64': ami-0479bba44666a6ffd
+      '64': ami-098f076618fad09bb
     eu-west-3:
       '64': ami-08d50ac7da274f44d
     ap-southeast-1:
@@ -373,7 +373,7 @@ Resources:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       TemplateURL: >-
-        https://pyramid-cloudformation.s3.amazonaws.com/marketplace/2020-24-lb/pyramid-base-resources-parameters.yaml
+        https://snap-managedservice-master-pyramid-config.s3.eu-west-2.amazonaws.com/cloudformation_templates/pyramid-base-resources-parameters.yaml
       Parameters:
         BaseStackName: !Ref AWS::StackName
         VPCID: !Ref VPCID
@@ -392,7 +392,7 @@ Resources:
     DependsOn: BaseResourcesParameters
     Properties:
       TemplateURL: >-
-        https://pyramid-cloudformation.s3.amazonaws.com/marketplace/2020-24-lb/pyramid-repository-database.yaml
+        https://snap-managedservice-master-pyramid-config.s3.eu-west-2.amazonaws.com/cloudformation_templates/pyramid-repository-database.yaml
       Parameters:
         BaseStackName: !Ref AWS::StackName
         RDSDeploymentType: !Ref RDSDeploymentType
@@ -529,7 +529,7 @@ Resources:
       - PyramidProcessesSecurityGroupRepositoryAccess
     Properties:
       TemplateURL: >-
-        https://pyramid-cloudformation.s3.amazonaws.com/marketplace/2020-24-lb/pyramid-backup-restore-s3.yaml
+        https://snap-managedservice-master-pyramid-config.s3.eu-west-2.amazonaws.com/cloudformation_templates/pyramid-backup-restore-s3.yaml
       Parameters:
         BackupRestore: restore
         BaseStackName: !Ref AWS::StackName
@@ -543,7 +543,7 @@ Resources:
       - PyramidProcessesSecurityGroupRepositoryAccess
     Properties:
       TemplateURL: >-
-        https://pyramid-cloudformation.s3.amazonaws.com/marketplace/2020-24-lb/pyramid-single-instance.yaml
+        https://snap-managedservice-master-pyramid-config.s3.eu-west-2.amazonaws.com/cloudformation_templates/pyramid-single-instance.yaml
       Parameters:
         AMIID: !FindInMap 
           - AWSAMIRegionMap
@@ -575,7 +575,7 @@ Resources:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       TemplateURL: >-
-        https://pyramid-cloudformation.s3.amazonaws.com/marketplace/2020-24-lb/pyramid-load-balancer.yaml
+        https://snap-managedservice-master-pyramid-config.s3.eu-west-2.amazonaws.com/cloudformation_templates/pyramid-load-balancer.yaml
       Parameters:
         BaseStackName: !Ref AWS::StackName
         WebInstance: !GetAtt CentralInstance.Outputs.InstanceId
