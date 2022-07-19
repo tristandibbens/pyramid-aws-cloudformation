@@ -27,7 +27,7 @@
     eu-west-1:
       '64': ami-07c7200d1881c8824
     eu-west-2:
-      '64': ami-098f076618fad09bb
+      '64': ami-09c677b98e14c433c
     eu-west-3:
       '64': ami-08d50ac7da274f44d
     ap-southeast-1:

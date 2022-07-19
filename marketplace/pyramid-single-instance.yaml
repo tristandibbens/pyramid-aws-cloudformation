@@ -284,7 +284,7 @@ Resources:
     Properties:
       Handle: !Ref InstanceWaitHandle
       # 30 mins/1800 secs originally. 2020.20 has a larger set of resources to unpack, so go to 40 mins  :-/
-      Timeout: '2400'
+      Timeout: '5600'
       Count: 1
 
   PyramidInstance:
